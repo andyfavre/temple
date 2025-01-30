@@ -112,7 +112,7 @@ function FirestoreForm() {
     <div className="min-h-screen flex justify-center items-center">
       <div className="p-6 max-w-lg mx-auto bg-white rounded-2xl shadow-lg w-full">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          React Form with Firestore
+          Founder's Stone
         </h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div>
