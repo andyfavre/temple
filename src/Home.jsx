@@ -45,7 +45,7 @@ function HomePage() {
         database.map((entry, index) => (
           <div
             key={index}
-            className="flex items-center justify-left text-center text-white p-0 backdrop-blur-sm rounded-xl shadow-none min-h-[10px] font-academy"
+            className="text-[2vw] flex items-center justify-left text-center text-white p-0 backdrop-blur-none rounded-xl shadow-none min-h-[10px] font-academy"
           >
             {entry.name}
           </div>
