@@ -29,32 +29,42 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-scroll">
-      {/* Background Image */}
-      <img
-        src="/background.jpg"
-        className="absolute inset-0 w-full min-h-screen object-cover object-[center_top] z-0"
-        alt="Background"
-      />
+    <div className="min-h-screen relative  flex items-center justify-center">
+    {/* Background Image (Centered) */}
+    <img
+      src="/background.jpg"
+      className="absolute inset-0 w-full  object-cover object-center z-0"
+      alt="Background"
+    />
+  
+    {/* Content Container */}
+    <div className="relative z-8 text-center px-6 sm:px-12 w-full mx-auto">
+  <div className="flex justify-center items-start h-screen ">
+    <div className="w-1/5 mt-[20vh] md:mt-[25vh] lg:mt-[30vh] xl:mt-[35vh] 2xl:mt-[40vh]">
+      {database.length > 0 ? (
+        database.map((entry, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-left text-center text-white p-0 backdrop-blur-sm rounded-xl shadow-none min-h-[10px] font-academy"
+          >
+            {entry.name}
+          </div>
+        ))
+      ) : (
+        <p className="text-white text-lg font-semibold font-academy">
+          No data stored yet.
+        </p>
+      )}
+    </div>
+  </div>
+</div>
+  
+  
 
-      {/* Content Overlay */}
-      <div className="absolute z-10 sm:left-[45%] left-[45%] top-[15%] sm:top-[25%]">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {database.length > 0 ? (
-            database.map((entry, index) => (
-              <div key={index} className="text-white">
-                {entry.name}
-              </div>
-            ))
-          ) : (
-            <p className="text-white">No data stored yet.</p>
-          )}
-        </div>
-      </div>
 
       {/* Button to Show Popup */}
       <button
-        className="fixed top-4 left-4 p-2 bg-white"
+        className="fixed top-4 left-4 p-2 bg-white z-10"
         onClick={() => setShowPopup(true)}
       >
         Add your name to the stone
